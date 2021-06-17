@@ -1,0 +1,13 @@
+bottle==0.12.9
+
+beautifulsoup4==4.8.1
+requests==2.25.1
+psycopg2==2.8.5
+pandas==1.1.5
+matplotlib==3.3.4
+seaborn==0.11.1
+japanize_matplotlib==1.0.5
+
+
+
+
