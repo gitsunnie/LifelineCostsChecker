@@ -430,7 +430,6 @@ if __name__ == '__main__':
     # 偶数月でなかったら終了
     if month % 2 != 0:
         print('偶数月を指定してね')
-        # a
         exit()
 
     # Connect Database
