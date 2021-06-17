@@ -152,14 +152,6 @@ def get_info(year, month):
         'name_house': name_house
     }
 
-    # print('今回検針日:', prev_date)
-    # print('前回検針日:', this_date)
-    # print('使用量:', amount)
-    # print('基本料金:', fee_basic)
-    # print('うち消費税:', tax)
-    # print('請求料金:', fee_total_get)
-    # print(dict_info)
-
     return dict_info
 
 
