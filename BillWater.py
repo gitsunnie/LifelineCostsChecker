@@ -405,7 +405,6 @@ def send_message(df_draw, year, month):
     message = message.format(year=year, month=month,
                              amount=amount, amount_diff=amount_diff, fee=fee, fee_diff=fee_diff)
 
-    token = 'xoxb-1082152242931-2036134552961-7FwhggqkYLFuTmJJ50mAgTZl'
     token = os.environ['slack_token']
     channel_id = 'C024R5EAH55'  # チャンネル名: notice-lifeline-cost
 
