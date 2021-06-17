@@ -32,7 +32,7 @@ def get_info(year, month):
     # ID = ''
     # PASSWORD = ''
     id = os.environ['id_water']  # 環境変数から ID を読み込み
-    password = os.environ['id_password']  # 環境変数から Password を読み込み
+    password = os.environ['password_water']  # 環境変数から Password を読み込み
 
     session = requests.session()
 
@@ -252,11 +252,11 @@ def calc_data(dict_info):
 
 def connect_database():
     # Settings
-    host = 'ec2-3-233-7-12.compute-1.amazonaws.com'
-    port = 5432
-    user = 'wfzuoetwdihyqi'
-    name_db = 'd503lsfb4jhm6m'
-    password = '524d00ddac91653c99d4f889ab7e68b2d5d7a6f96a91212d887b7f3b697821a4'
+    host = os.environ['database_host']
+    port = os.environ['database_port']
+    user = os.environ['database_user']
+    name_db = os.environ['database_name']
+    password = os.environ['database_password']
 
     # Connect
     str_dsn = 'host={host} port={port} dbname={dbname} user={user} password={password}'
@@ -406,7 +406,8 @@ def send_message(df_draw, year, month):
                              amount=amount, amount_diff=amount_diff, fee=fee, fee_diff=fee_diff)
 
     token = 'xoxb-1082152242931-2036134552961-7FwhggqkYLFuTmJJ50mAgTZl'
-    channel_id = 'C024R5EAH55'
+    token = os.environ['slack_token']
+    channel_id = 'C024R5EAH55'  # チャンネル名: notice-lifeline-cost
 
     files = {'file': open('output.jpg', 'rb')}
     param = {
