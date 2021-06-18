@@ -1,2 +1,2 @@
 # 使用する Python のバージョンを記入
-python-3.7.4
+python-3.6.9
