@@ -314,12 +314,12 @@ def insert_data(conn, cur, dict_info):
     str_values = ', '.join(list_values)
     str_query = str_query.format(name_columns=str_columns, name_values=str_values)
 
-    print(str_query)
+    # print(str_query)
 
     # Execute
     cur.execute(str_query)
     conn.commit()
-    print(cur.statusmessage)
+    # print(cur.statusmessage)
 
 
 def draw_graph(year, month, cur):
@@ -327,7 +327,6 @@ def draw_graph(year, month, cur):
     date_temp = datetime.date(year, month, 1)
     month_before = (date_temp - relativedelta(months=23)).month
     year_before = (date_temp - relativedelta(months=23)).year
-    # print(year_before, month_before)
 
     # 過去2年間分を取得
     str_query = """
@@ -351,7 +350,7 @@ def draw_graph(year, month, cur):
     df_draw = df_draw.sort_values(['year', 'month'])
     df_draw['num_series'] = [i for i in range(6)] * 2  # 最新月をグラフの右に表示させるための機構
     df_draw['num_last'] = ['去年'] * 6 + ['今年'] * 6  # 昨年度のデータは薄く表示させるための機構
-    print(df_draw)
+    # print(df_draw)
 
     # 描画
     fig, ax1 = plt.subplots(figsize=(20, 10))
