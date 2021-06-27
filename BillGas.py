@@ -189,9 +189,6 @@ def connect_database():
 
     # excexute sql
     cur = conn.cursor()
-    # cur.execute('SELECT * FROM fee_gas;')
-    # res = cur.fetchall()
-    # print(res)
 
     return conn, cur
 
@@ -238,12 +235,12 @@ def insert_data(conn, cur, dict_info):
     str_values = ', '.join(list_values)
     str_query = str_query.format(name_columns=str_columns, name_values=str_values)
 
-    print(str_query)
+    # print(str_query)
 
     # Execute
     cur.execute(str_query)
     conn.commit()
-    print(cur.statusmessage)
+    # print(cur.statusmessage)
 
 
 def draw_graph(year, month, cur):
