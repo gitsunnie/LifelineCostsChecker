@@ -396,8 +396,9 @@ def send_message(df_draw, year, month):
 
 
 if __name__ == '__main__':
-    year = 2021
-    month = 6
+    today = datetime.date.today()
+    year = today.year
+    month = today.month
 
     # Connect Database
     conn, cur = connect_database()
