@@ -62,6 +62,13 @@ def get_info(year, month):
     ## 表示されている年月のリストを取得
     list_ym = [i.parent.next_sibling.next_sibling.string for i in list_bills_link]
     list_ym = [datetime.datetime.strptime(i, '%Y年%m月') for i in list_ym]
+
+    # 更新チェック
+    ## 対象年月のデータが出ているか確認 -> 出ていなかったら終了
+    if datetime.datetime(year, month, 1, 0, 0) not in list_ym:
+        print('まだ{year}年{month}月のデータは出ていません'.format(year=year, month=month))
+        exit()
+
     index = list_ym.index(datetime.datetime(year, month, 1, 0, 0))
     url_bills_target = list_bills_link[index]['href']
     # 0番目の要素が最新の料金明細になる
