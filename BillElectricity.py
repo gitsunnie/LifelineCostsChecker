@@ -379,7 +379,7 @@ def send_message(df_draw, year, month):
     diff = df_temp['diff'].to_list()[1]
     diff = '{:,}'.format(diff)  # カンマ区切りにする
     message = ('{year}年{month}月 - 電気代が確定！'
-               + '\n使用量: {amount}㎥ (前年比: {amount_diff}㎥)'
+               + '\n使用量: {amount}kWh (前年比: {amount_diff}kWh)'
                + '\n合計金額: {fee}円 (前年比: {fee_diff}円)'
                + '\n実測値 - 計算値: {diff}円')
     message = message.format(year=year, month=month,
